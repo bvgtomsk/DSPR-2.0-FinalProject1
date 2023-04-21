@@ -43,4 +43,4 @@
 - Файл с зависимостями
     
     
-Образ докер контейнера - https://hub.docker.com/r/bvgtomsk2005/patients_forecasting
+Образ докер контейнера - https://hub.docker.com/r/bvgtomsk2005/patients_forecasting - используемый порт - 5000
