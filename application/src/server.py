@@ -221,7 +221,7 @@ def predict():
             12: 'Декабрь',
         }
         test_df = test_df.loc[request_index].resample('M').agg(sum)
-        sns.barplot(x = [months_names[x.month] + ' - ' + x.year for x in test_df.index], y = round(test_df['Прогноз поступивших']), ax = ax)
+        sns.barplot(x = ['{} - {}'.format(months_names[x.month], x.year) for x in test_df.index], y = round(test_df['Прогноз поступивших']), ax = ax)
         ax.set_xlabel("Месяц")
         ax.tick_params(axis='x', rotation=90)
     elif period == 'day':
@@ -230,7 +230,7 @@ def predict():
         ax.set_xlabel("Дата")
     elif period == 'week':
         test_df = test_df.loc[request_index].resample('W').agg(sum)
-        sns.barplot(x = [x.week + ' - ' + x.year for x in test_df.index], y = round(test_df['Прогноз поступивших']), ax = ax)
+        sns.barplot(x = ['{} - {}'.format(x.week, x.year) for x in test_df.index], y = round(test_df['Прогноз поступивших']), ax = ax)
         ax.set_xlabel("Неделя")
         ax.tick_params(axis='x', rotation=90)
     ax.set_title("График поступивших")
